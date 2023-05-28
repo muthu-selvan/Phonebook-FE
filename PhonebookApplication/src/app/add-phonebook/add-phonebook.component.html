@@ -1,0 +1,53 @@
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-13">
+            <p><strong><h3>Phone Book</h3></strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+        <div class="ui-fluid">
+          <div *ngIf="showAlert" class="alert alert-danger" role="alert">
+            {{alertMsg}}
+          </div>
+          
+          <!-- First Name -->
+          <div class="p-field p-grid">
+            <label for="firstName" class="p-col-2 p-md-2">First Name</label>
+            <div class="p-col-6 p-md-6">
+                <input id="firstName" style="width: 214px;" type="text" [(ngModel)]="phoneBook.firstName" maxlength="10" pInputText>
+            </div>
+          </div>
+           <!-- Last Name -->
+          <div class="p-field p-grid">
+            <label for="lastName" class="p-col-2 p-md-2">Last Name</label>
+            <div class="p-col-2">
+              <input id="lastName" style="width: 214px;" type="text" [(ngModel)]="phoneBook.lastName" maxlength="10" pInputText>
+            </div>
+          </div>
+          <!-- Phone Number -->
+          <div class="p-field p-grid">
+            <label for="phoneNumber" class="p-col-2 p-md-2">Phone Number</label>
+            <div class="p-col-6 p-md-6">
+                <input type="tel" id="phoneNumber" style="width: 214px;" name="phoneNumber"  maxlength="12"
+                placeholder="123-456-7890" [(ngModel)]="phoneBook.phoneNo" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-10"></div>
+            <div class="col-lg-1">
+              <button type="button" style="float: right;" class="btn btn-danger" (click)="cancel()">Cancel</button>
+            </div>
+            <div class="col-lg-1">
+              <button type="button" style="float: right;" class="btn btn-success" (click)="save()">Save</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
